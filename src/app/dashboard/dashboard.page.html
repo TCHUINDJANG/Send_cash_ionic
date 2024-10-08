@@ -1,0 +1,71 @@
+<ion-header>
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="dashboard-container">
+    <div class="profile">
+      <img [src]="user.photoUrl" alt="Profile Photo" class="profile-photo"/>
+      <h3>{{ user.name }}</h3>
+    </div>
+
+    <div class="balance-card">
+      <h2>Solde disponible</h2>
+      <p class="balance-amount">$500.00</p>
+    </div>
+
+    <ion-button expand="full" color="primary" (click)="initiateTransfer()">
+      Initier un transfert
+    </ion-button>
+
+    <h3>Historique des transactions</h3>
+    <ion-list>
+      <ion-item *ngFor="let transaction of transactions">
+        <ion-label>
+          <h2>{{ transaction.title }}</h2>
+          <p>{{ transaction.date }}</p>
+          <p>Montant : ${{ transaction.amount }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+
+
+
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Actions</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="action-buttons">
+        <ion-button expand="full" class="action-circle" (click)="goToDepot()">
+          <ion-icon name="add-circle-outline"></ion-icon>
+          <ion-label>Dépôt</ion-label>
+        </ion-button>
+        <ion-button expand="full" class="action-circle" (click)="goToSend()">
+          <ion-icon name="send"></ion-icon>
+          <ion-label>Envoi</ion-label>
+        </ion-button>
+        <ion-button expand="full" class="action-circle" (click)="goToTransfert()">
+          <ion-icon name="remove-circle-outline"></ion-icon>
+          <ion-label>Retrait</ion-label>
+        </ion-button>
+        <ion-button expand="full" class="action-circle" (click)="navigateTo('transfer')">
+          <ion-icon name="swap"></ion-icon>
+          <ion-label>Transfert</ion-label>
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+
+  
+</ion-content>

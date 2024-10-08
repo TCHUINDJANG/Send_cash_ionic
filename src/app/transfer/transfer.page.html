@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Retrait d'argent</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <h2>Retirer de l'argent</h2>
+    <form (ngSubmit)="onSubmit()">
+      <ion-item>
+        <ion-label position="floating">Montant</ion-label>
+        <ion-input type="number" [(ngModel)]="amount" name="amount" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Devise</ion-label>
+        <ion-select [(ngModel)]="currency" name="currency" required>
+          <ion-select-option value="XAF">Franc CFA</ion-select-option>
+          <ion-select-option value="RUB">Rouble</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Nom du retraitant</ion-label>
+        <ion-input type="text" [(ngModel)]="recipientName" name="recipientName" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Numéro de compte</ion-label>
+        <ion-input type="text" [(ngModel)]="accountNumber" name="accountNumber" required></ion-input>
+      </ion-item>
+
+      <ion-button expand="full" type="submit" color="secondary">Retirer</ion-button>
+    </form>
+  </div>
+</ion-content>
+

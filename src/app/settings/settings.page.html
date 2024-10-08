@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Paramètres</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="settings-container">
+
+    <h2>Informations personnelles</h2>
+    <ion-item>
+      <ion-label position="floating">Nom</ion-label>
+      <ion-input type="text" [(ngModel)]="user.name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" [(ngModel)]="user.email"></ion-input>
+    </ion-item>
+
+    <h2>Sécurité</h2>
+    <ion-item>
+      <ion-label position="floating">Mot de passe</ion-label>
+      <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Authentification à deux facteurs</ion-label>
+      <ion-toggle [(ngModel)]="user.twoFactorAuth"></ion-toggle>
+    </ion-item>
+
+    <h2>Notifications</h2>
+    <ion-item>
+      <ion-label>Recevoir des notifications</ion-label>
+      <ion-toggle [(ngModel)]="user.notificationsEnabled"></ion-toggle>
+    </ion-item>
+
+    <h2>Autres</h2>
+    <ion-item>
+      <ion-label>Langue</ion-label>
+      <ion-select [(ngModel)]="user.language">
+        <ion-select-option value="en">Anglais</ion-select-option>
+        <ion-select-option value="fr">Français</ion-select-option>
+        <ion-select-option value="es">Espagnol</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button expand="full" color="primary" (click)="saveSettings()">
+      Sauvegarder les paramètres
+    </ion-button>
+
+    <ion-button expand="full" color="danger" (click)="logout()">
+      Déconnexion
+    </ion-button>
+    
+  </div>
+</ion-content>
+
+  
